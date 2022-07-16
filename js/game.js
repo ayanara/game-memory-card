@@ -19,8 +19,41 @@ const createElement = (tag, className) => {
     element.className = className;
     return element;
 }
+
+const checkCards = () => {
+    const firstCharacter = firstCard.getAttribute('data-character');
+    const secondCharacter = secondCard.getAttribute('data-character');
+
+    if (firstCharacter === secondCharacter) {
+
+    } else {
+        setTimeout(() => {
+            firstCard.classList.remove('reveal-card');
+            secondCard.classList.remove('reveal-card');
+        }, 500);
+        
+    }
+}
+
+let firstCard = '';
+let secondCard = '';
+
 const revealCard = ({target}) => {
-    target.parentNode.classList.add('reveal-card');
+    if (target.parentNode.className.includes('reveal-card')){
+        return;
+    }
+
+    if (firstCard === '') {
+        target.parentNode.classList.add('reveal-card');
+        firstCard = target.parentNode;
+    } else if (secondCard === '') {
+        target.parentNode.classList.add('reveal-card');
+        secondCard = target.parentNode;
+
+        checkCards();
+
+    }
+    
 }
 const createCard = (character) => {
     const card = createElement('div', 'card');
@@ -33,6 +66,8 @@ const createCard = (character) => {
     card.appendChild(back);
 
     card.addEventListener('click', revealCard);
+    card.setAttribute('data-character', character);
+    
 
     return card;
 }
