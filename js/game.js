@@ -11,16 +11,7 @@ const characters = [
     '08',
     '09',
     '10',
-    '11',
-    '12',
-    '13',
-    '14',
-    '15',
-    '16',
-    '17',
-    '18',
-    '19',
-    '20',
+    
 ];
 
 const createElement = (tag, className) => {
@@ -42,7 +33,13 @@ const createCard = (character) => {
 }
 
 const loadGame = () => {
-    characters.forEach((character) => {
+
+    const duplicaCharacters = [...characters, ...characters];
+
+    const shuffleArray = duplicaCharacters.sort(()=> Math.random() - 0.5);
+
+
+    shuffleArray.forEach((character) => {
         const card = createCard(character);
         grid.appendChild(card);
 
