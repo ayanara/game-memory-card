@@ -1,3 +1,6 @@
+body {
+    background-color: rgb(79, 226, 236);
+}
 .login-form {
     display: flex;
     flex-direction: column;
@@ -41,4 +44,9 @@
     background-color: #eee;
     color: #aaa;
     cursor: auto;
+}
+
+img {
+    width: 300px;
+    
 }
