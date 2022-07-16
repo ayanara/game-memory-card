@@ -40,3 +40,8 @@
 .reveal-card {
     transform: rotatey(180deg);
 }
+
+.disabled-card {
+    filter: saturate(0);
+    opacity: 0.5;
+}
