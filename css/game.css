@@ -25,7 +25,7 @@ header {
   
 .grid {
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 15px;
     width: 100%;
     max-width: 1300px;
@@ -70,3 +70,10 @@ header {
     filter: saturate(0);
     opacity: 0.5;
 }
+
+/* .my-alert {
+    background-color: #00FF00;
+    color: #000000;
+    font-family: Arial;
+    font-size: 20px;
+  } */

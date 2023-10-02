@@ -9,20 +9,7 @@ const characters = [
     '04',
     '05',
     '06',
-    '07',
-    '08',
-    '09',
-    '10',
-    '11',
-    '12',
-    '13',
-    '14',
-    '15',
-    '16',
-    '17',
-    '18',
-    '19',
-    '20',
+    
     
 ];
 
@@ -38,9 +25,14 @@ let secondCard = '';
 const cheeCkEndGame = () => {
     const disabledCard = document.querySelectorAll('.disabled-card');
 
-    if(disabledCard.length === 40){
+    if(disabledCard.length === 12){
         clearInterval(this.loop);
-        alert(`Parabéns, ${spanPlayer.innerHTML}! Seu tempo foi: ${timer.innerHTML}`);
+        Swal.fire({
+            title: `Parabéns, ${spanPlayer.innerHTML}!`,
+            text: `Você ganhou o jogo em ${(timer.innerHTML / 60).toFixed(2)} minutos e ${timer.innerHTML % 60} segundos!`,
+            icon: 'success',
+            confirmButtonColor: '#ee665c',
+        });
     }
 }
 
